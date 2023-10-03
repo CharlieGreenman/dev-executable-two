@@ -20,6 +20,9 @@
     "paths": {
       "@dev-executable-two/common/ui": [
         "libs/common/ui/src/index.ts"
+      ],
+      "@dev-executable-two/home": [
+        "libs/home/src/index.ts"
       ]
     }
   },
