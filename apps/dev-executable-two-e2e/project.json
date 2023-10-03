@@ -1,0 +1,29 @@
+{
+  "name": "dev-executable-two-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/dev-executable-two-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/dev-executable-two-e2e/cypress.json",
+        "devServerTarget": "dev-executable-two:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "dev-executable-two:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/dev-executable-two-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["dev-executable-two"]
+}
